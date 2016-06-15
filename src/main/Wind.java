@@ -5,21 +5,18 @@ import org.json.JSONObject;
 public class Wind {
 	JSONObject wind = Main.getJSONObj().getJSONObject("wind");
 
-	long winSpeed = wind.getLong("speed");
-	int winSpeedNoDecs = (int) winSpeed;
+	int winSpeed = (int) wind.getLong("speed");
+	int degree = (int) wind.getLong("deg");
 
-	long degree = wind.getLong("deg");
-	int degreeNoDecs = (int) degree;
-
-	boolean north = (degreeNoDecs >= 315 && degreeNoDecs <= 360) || (degreeNoDecs >= 0 && degreeNoDecs <= 44);
-	boolean east = (degreeNoDecs >= 45 && degreeNoDecs <= 134);
-	boolean south = (degreeNoDecs >= 135 && degreeNoDecs <= 224);
-	boolean west = (degreeNoDecs >= 225 && degreeNoDecs <= 314);
+	boolean north = (degree >= 315 && degree <= 360) || (degree >= 0 && degree <= 44);
+	boolean east = (degree >= 45 && degree <= 134);
+	boolean south = (degree >= 135 && degree <= 224);
+	boolean west = (degree >= 225 && degree <= 314);
 
 	public StringBuilder getWindSpeed() {
 		StringBuilder winds = new StringBuilder();
 		winds.append("Wind Speed: ");
-		winds.append(winSpeedNoDecs);
+		winds.append(winSpeed);
 		winds.append("m/s");
 		return winds;
 	}

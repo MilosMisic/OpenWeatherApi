@@ -3,9 +3,7 @@ package main;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 
 public class Connect {
@@ -16,20 +14,14 @@ public class Connect {
 
 			BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
 
-			String response = "";
-			String jsonData = "";
-
-			while (null != (response = br.readLine())) {
-				jsonData += response;
-			}
-			return jsonData;
+			return br.readLine();
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
-		} catch (ProtocolException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.err.println("I/O Error: " + e.getMessage());
+			System.exit(1);
 		}
-		return "";
+		throw new RuntimeException("Method fallthrough!");
 	}
+
 }

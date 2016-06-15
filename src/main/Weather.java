@@ -3,19 +3,17 @@ package main;
 import org.json.JSONObject;
 
 public class Weather {
-	JSONObject main = Main.getJSONObj().getJSONObject("main");
 
-	long cels = main.getLong("temp") - 273;
-	int celsNoDecs = (int) cels;
-
-	int hum = (int) main.get("humidity");
+	private JSONObject main = Main.getJSONObj().getJSONObject("main");
+	private int cels = (int) main.getLong("temp") - 273;
+	private int hum = main.getInt("humidity");
 
 	public StringBuilder getTemp() {
 		StringBuilder temp = new StringBuilder();
 		temp.append("Temperature in ");
 		temp.append(Main.getJSONObj().get("name"));
 		temp.append(" is: ");
-		temp.append(celsNoDecs);
+		temp.append(cels);
 		temp.append("c");
 		return temp;
 	}

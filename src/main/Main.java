@@ -11,10 +11,7 @@ public class Main {
 		Weather w = new Weather();
 		Wind wind = new Wind();
 
-		System.out.println(w.getTemp());
-		System.out.println(w.getHumidity());
-		System.out.println(wind.getWindSpeed());
-		System.out.println(wind.getDegree());
+		System.out.println(w.getTemp() + "\n" + w.getHumidity() + "\n" + wind.getWindSpeed() + "\n" + wind.getDegree());
 
 	}
 

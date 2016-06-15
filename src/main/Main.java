@@ -19,7 +19,7 @@ public class Main {
 		output.append(wind.getWindSpeed());
 		output.append("\n");
 		output.append(wind.getDegree());
-	
+
 		System.out.println(output);
 
 	}

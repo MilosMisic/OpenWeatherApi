@@ -8,9 +8,11 @@ import java.net.URL;
 
 public class Connect {
 	public static String start() {
+		
+		String key = "3b533332460a1f75c7b0cedb5ed99517";
 		try {
 			URL url = new URL(
-					"http://api.openweathermap.org/data/2.5/weather?q=Belgrade&APPID=3b533332460a1f75c7b0cedb5ed99517");
+		"http://api.openweathermap.org/data/2.5/weather?q=Belgrade&units=metric&APPID="+key);
 
 			BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
 

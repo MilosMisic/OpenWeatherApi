@@ -5,7 +5,7 @@ import org.json.JSONObject;
 public class Weather {
 
 	private JSONObject main = Main.getJSONObj().getJSONObject("main");
-	private int cels = (int) main.getLong("temp") - 273;
+	private int cels = (int) main.getLong("temp");
 	private int hum = main.getInt("humidity");
 
 	public StringBuilder getTemp() {
